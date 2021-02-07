@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --magenta: hsl(300, 43%, 22%);
+  --pink: hsl(333, 80%, 67%);
+
+  --darkgraymagenta: hsl(303, 10%, 53%);
+  --lightgraymagenta: hsl(300, 24%, 96%);
+  --white: hsl(0, 0%, 100%);
+
+  --font-family: 'Spartan', sans-serif;
+  --bold: 700;
+  --medium: 500;
+  --normal: 400;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  font-weight: var(--normal);
+  background-color: var(--white);
+  font-size: 15px;
+}
+
+main {
+  background: url(./images/bg-pattern-top-desktop.svg) top left no-repeat,
+    url(./images/bg-pattern-bottom-desktop.svg) right bottom no-repeat;
+  /* width: 100vw;
+  height: 100vh; */
+  padding: 0 5%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+}
+
+.details-area {
+  padding: 6rem 0 0 6rem;
+  width: 90%;
+}
+
+.details-area h1 {
+  color: var(--magenta);
+  font-weight: var(--bold);
+  font-size: 3rem;
+  word-wrap: wrap;
+  line-height: 1em;
+}
+
+.details-area p {
+  margin-top: 25px;
+  color: var(--darkgraymagenta);
+  font-weight: var(--medium);
+  font-size: 1rem;
+  line-height: 1.5em;
+}
+
+.rating-area {
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.rating-area .rating {
+  background-color: var(--lightgraymagenta);
+  display: flex;
+  width: 60%;
+  margin: 15px;
+  padding: 15px 10px;
+  justify-content: space-evenly;
+  border-radius: 5px;
+  font-size: 0.75rem;
+  font-weight: var(--bold);
+}
+
+.rating-area .rating.one {
+  position: relative;
+  left: -50px;
+}
+
+.rating-area .rating.three {
+  position: relative;
+  right: -50px;
+}
+
+.review-area,
+.attribution {
+  grid-column: span 2;
+}
+
+.review-area {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  padding: 5rem 5rem 0 6rem;
+}
+
+.review-area .card {
+  background-color: var(--magenta);
+  color: var(--lightgraymagenta);
+  padding: 20px 20px 0 20px;
+  border-radius: 10px;
+}
+
+.review-area .card.one {
+  position: relative;
+  top: -25px;
+}
+
+.review-area .card.three {
+  position: relative;
+  bottom: -25px;
+}
+
+.review-area .card .top-card {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1rem;
+}
+
+.review-area img {
+  border-radius: 50%;
+  width: 15%;
+}
+
+.review-area .card .top-card p {
+  padding: 2px 5px 5px 20px;
+  font-size: 0.75rem;
+  font-weight: var(--bold);
+}
+
+.review-area .card .top-card p.status {
+  color: var(--pink);
+  font-weight: var(--normal);
+}
+
+.review-area .card .bottom-card {
+  padding: 1rem;
+  font-size: 0.75rem;
+  font-weight: var(--medium);
+  line-height: 1.5rem;
+}
+
+.attribution {
+  font-size: 0.75rem;
+  font-weight: var(--bold);
+  padding: 50px;
+  text-align: center;
+}
+
+@media all and (max-width: 1220px) {
+  .details-area h1 {
+    font-size: 2rem;
+  }
+
+  .details-area p {
+    font-size: 0.75rem;
+  }
+
+  .rating-area {
+    align-items: center;
+  }
+
+  .rating-area .rating {
+    width: 75%;
+    margin: 5px;
+  }
+}
+
+@media all and (max-width: 940px) {
+  .details-area {
+    padding: 5rem 0 0 1rem;
+  }
+
+  .rating-area {
+    align-items: flex-start;
+  }
+
+  .rating-area .rating {
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+  }
+
+  .rating-area .rating.one {
+    position: static;
+  }
+
+  .rating-area .rating.three {
+    position: static;
+  }
+
+  .review-area {
+    gap: 1rem;
+    padding: 2rem 1rem 0 1rem;
+  }
+
+  .review-area .card.one {
+    position: static;
+  }
+
+  .review-area .card.three {
+    position: static;
+  }
+}
+
+@media all and (max-width: 660px) {
+  main {
+    display: block;
+  }
+
+  .details-area {
+    padding: 5rem 0 2rem 4rem;
+    text-align: center;
+  }
+
+  .rating-area {
+    align-items: center;
+  }
+
+  .rating-area .rating {
+    width: 75%;
+  }
+
+  .review-area {
+    display: block;
+    padding: 2rem 0 0 4rem;
+    width: 90%;
+  }
+
+  .review-area .card {
+    margin: 0 0 1rem;
+  }
+}
